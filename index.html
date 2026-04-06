@@ -3,39 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大學生存指南</title>
+    <title>逢甲美食地圖</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: "Microsoft JhengHei", Arial, sans-serif;
-            max-width: 500px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: #fff3e0;
+            background-color: #e3f2fd;
             color: #333;
         }
-        h1 {
+
+        header {
+            background-color: #1565c0;
+            padding: 20px;
             text-align: center;
-            font-size: 1.6em;
+            border-bottom: 2px solid #0d47a1;
         }
-        .tip {
-            background-color: #fff;
-            border-radius: 12px;
+
+        header h1 {
+            color: #ffffff;
+            font-size: 1.8em;
+        }
+
+        header p {
+            color: #bbdefb;
+            margin-top: 5px;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
             padding: 15px;
-            margin: 15px 0;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            background-color: #fff;
+            flex-wrap: wrap;
         }
-        .tip h3 {
-            margin: 0 0 8px 0;
+
+        .filter-bar button {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background-color: #fff;
+            cursor: pointer;
+            font-size: 0.9em;
         }
-        .tip p {
-            margin: 0;
-            color: #555;
+
+        .filter-bar button.active {
+            background-color: #1565c0;
+            color: #fff;
+            border-color: #1565c0;
+        }
+
+        .restaurant-list {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .restaurant-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            border-left: 4px solid #1565c0;
+        }
+
+        .restaurant-card h2 {
+            font-size: 1.2em;
+            color: #1565c0;
+        }
+
+        .restaurant-card .tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #1565c0;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin: 8px 4px 8px 0;
+        }
+
+        .restaurant-card .details {
+            color: #666;
+            font-size: 0.9em;
             line-height: 1.6;
         }
-        .footer {
+
+        .restaurant-card .price {
+            font-weight: bold;
+            color: #c62828;
+        }
+
+        .restaurant-card .rating {
+            color: #fbc02d;
+        }
+
+        .notice {
+            max-width: 700px;
+            margin: 10px auto;
+            padding: 12px 15px;
+            background-color: #fff9c4;
+            border-radius: 8px;
             text-align: center;
+            font-size: 0.9em;
+            color: #f57f17;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
             color: #aaa;
-            margin-top: 30px;
             font-size: 0.85em;
         }
     </style>
@@ -54,9 +132,13 @@
         <p>午餐別再去學餐擠了！走遠 5 分鐘的巷子裡有 60 元便當，CP 值超高。</p>
     </div>
 
-    <div class="tip">
-        <h3>📖 期末生存術</h3>
-        <p>圖書館 3 樓的靠窗位最搶手，期末週請提早 30 分鐘卡位。</p>
+    <div class="filter-bar">
+        <button class="active">全部</button>
+        <button>台式</button>
+        <button>日式</button>
+        <button>飲料</button>
+        <button>甜點</button>
+        <button>素食</button>
     </div>
 
     <div class="tip">
@@ -67,5 +149,10 @@
     <div class="footer">
         <p>大學生存指南 v1.1 — 吃飽才有力氣讀書 🍱</p>
     </div>
+
+    <footer>
+        <p>逢甲美食地圖 &copy; 2025 — 由進階程式設計課程製作</p>
+    </footer>
+
 </body>
 </html>
